@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-lowest: var(--sys-surface-lowest);
+  --color-surface: var(--sys-surface);
+  --color-surface-low: var(--sys-surface-low);
+  --color-surface-container: var(--sys-surface-container);
+  --color-surface-high: var(--sys-surface-high);
+  
+  --color-primary: var(--sys-primary);
+  --color-primary-container: var(--sys-primary-container);
+  --color-primary-fixed: var(--sys-primary-fixed);
+  
+  --color-secondary: var(--sys-secondary);
+  --color-secondary-fixed: var(--sys-secondary-fixed);
+  --color-error: var(--sys-error);
+  
+  --color-on-surface: var(--sys-on-surface);
+  --color-on-surface-variant: var(--sys-on-surface-variant);
+  --color-on-primary: var(--sys-on-primary);
+  --color-on-primary-fixed: var(--sys-on-primary-fixed);
+  --color-outline-variant: var(--sys-outline-variant);
+
+  --font-manrope: "Manrope", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Base Light Theme */
+:root {
+  --sys-surface-lowest: #fdfdfd;
+  --sys-surface: #f4f6f8;
+  --sys-surface-low: #ebeef2;
+  --sys-surface-container: #d9dfe5;
+  --sys-surface-high: #ffffff;
+  
+  --sys-primary: #005c48;
+  --sys-primary-container: #008f6d;
+  --sys-primary-fixed: #00b38c;
+  
+  --sys-secondary: #005273;
+  --sys-secondary-fixed: #007fa3;
+  --sys-error: #ba1a1a;
+  
+  --sys-on-surface: #10131a;
+  --sys-on-surface-variant: #4e5b53;
+  --sys-on-primary: #ffffff;
+  --sys-on-primary-fixed: #ffffff;
+  --sys-outline-variant: #c1ced2;
+}
+
+/* Dark Theme overrides */
+[data-theme='dark'] {
+  --sys-surface-lowest: #000000;
+  --sys-surface: #05070A;
+  --sys-surface-low: #0B0E14;
+  --sys-surface-container: #10151E;
+  --sys-surface-high: #1A212E;
+  
+  --sys-primary: #3AFFC2;
+  --sys-primary-container: #008F6D;
+  --sys-primary-fixed: #C3FFE3;
+  
+  --sys-secondary: #B7EAFF;
+  --sys-secondary-fixed: #A6E6FF;
+  --sys-error: #FFB4AB;
+  
+  --sys-on-surface: #F2F4F8;
+  --sys-on-surface-variant: #A4B1C5;
+  --sys-on-primary: #002118;
+  --sys-on-primary-fixed: #005C48;
+  --sys-outline-variant: #2A364A;
+}
+
+body {
+  margin: 0;
+  background-color: var(--sys-surface-lowest);
+  color: var(--sys-on-surface);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope);
+  color: var(--sys-on-surface);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--sys-surface-high) 60%, transparent), color-mix(in srgb, var(--sys-surface) 40%, transparent));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid color-mix(in srgb, var(--sys-outline-variant) 30%, transparent);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.mesh-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(58, 255, 194, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(183, 234, 255, 0.05) 0%, transparent 40%);
+}
